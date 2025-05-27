@@ -1,0 +1,53 @@
+# Visual Studio 2015 onwards
+.vs/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# GitExtensions
+*.gess
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.suo
+*.user
+*.userosf
+*.sln.docstates
+
+# Resharper
+*.DotSettings
+*.DotSettings.user
+
+# NuGet packages
+# packages/
+# This is to ignore the "packages" folder (older project styles)
+# The new style (PackageReference) doesn't use a "packages" folder in the solution root.
+# If your project uses PackageReference, you can comment this out or remove it.
+
+# Rider
+.idea/
+*.csproj.user
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Miscellaneous
+*.resharper
+*.vspscc
+*.vssscc
+*.bak
+*.scc
+
+# Local project folders
+# If you have custom local folders that shouldn't be tracked, add them here.
+# e.g., /Data/
