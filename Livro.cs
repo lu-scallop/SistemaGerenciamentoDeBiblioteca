@@ -8,54 +8,60 @@ namespace SistemaGerenciamentoDeBiblioteca
 {
 	public class Livro
 	{
-		public string Titulo { get; set; }
-		public string Autor { get; set; }
-		public string ISBN { get; set; }
-		public int AnoPublicacao 
-		{
-			get 
-			{ return AnoPublicacao; }
-			set
-			{
-				int anoAtual = 2025;
-                if (value > anoAtual)
-                {
-					Console.WriteLine("Ano inválido: O ano de publicação supera o ano atual");
-                }
-				else
-				{
-					AnoPublicacao = value;
-				}
-
-            } 
-		}
-		public bool Disponivel 
-		{
-			get{ return Disponivel;}
-			set
-			{
-				Disponivel = true;
-			}
-		}
+		public string Titulo { get; private set; }
+		public string Autor { get; private set; }
+		public string ISBN { get; }
+		public int AnoPublicacao { get; private set; }
+		public bool Disponivel { get; private set; }
 
 		public Livro(string titulo, string autor, string isbn,
-			int anoDePublicacao, bool disponivel)
+			int anoPublicacao, bool disponivel)
 		{
 			Titulo = titulo;
 			Autor = autor;
 			ISBN = isbn;
-			AnoPublicacao = anoDePublicacao;
-			Disponivel = disponivel;
+
+			int anoAtual = DateTime.Now.Year;
+            if (anoPublicacao > anoAtual || anoPublicacao <= 0)
+            {
+				Console.WriteLine("Ano inválido! Ano de publicação alterada para ano atual");
+				AnoPublicacao = anoAtual;
+            }
+            else
+            {
+				AnoPublicacao = anoPublicacao;
+            }
+            Disponivel = true;
 		}
 
-		public bool Emprestar(Livro livro)
+		public bool Emprestar()
 		{
-			return livro.Disponivel = (livro.Disponivel == true) ? true : false;
+            if (Disponivel)
+            {
+				Disponivel = false;
+				Console.WriteLine("Livro emprestado!");
+				return true;
+            }
+			else 
+			{
+				Console.WriteLine("Erro: Esse livro já foi emprestado");
+				return false;
+			}
         }
 		public bool Devolver(Livro livro)
 		{
-			return livro.Disponivel = (livro.Disponivel == false) ? false : true;
-		}
+            if (!Disponivel)
+            {
+				Disponivel = true;
+				Console.WriteLine("O livro foi devolvido com sucesso! Obrigado!");
+				return true;
+            }
+            else
+            {
+                Console.WriteLine("Erro: O livro já está disponível!");
+				return false;
+            }
+        }
 		public string ObterInformacoes(Livro livro)
 		{
 			string informacoes = String.Format("*INFORMAÇÕES DO LIVRO*"+
