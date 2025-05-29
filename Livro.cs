@@ -62,18 +62,15 @@ namespace SistemaGerenciamentoDeBiblioteca
 				return false;
             }
         }
-		public string ObterInformacoes(Livro livro)
+		public string ObterInformacoes()
 		{
-			string informacoes = String.Format("*INFORMAÇÕES DO LIVRO*"+
-				                               "\nTítulo:{0}"+
-											   "\nAutor:{1}"+
-											   "\nISBN:{2}"+
-											   "\nAno de Publicação: {3}"+
-											   "\nDisponível:{4}",
-											   livro.Titulo, livro.Autor, 
-											   livro.ISBN, livro.AnoPublicacao, 
-											   livro.Disponivel);
-			return informacoes;
+			string statusDisponibilidade = Disponivel ? "Sim" : "Não";
+			return $"*INFORMAÇÕES DO LIVRO*\n"+
+					$"Título: {Titulo}\n"+
+					$"Autor: {Autor}\n"+
+					$"ISBN: {ISBN}\n"+
+					$"Ano de Publicação: {AnoPublicacao}\n"+
+					$"Disponível: {statusDisponibilidade}";
 		}
 	}
 }
