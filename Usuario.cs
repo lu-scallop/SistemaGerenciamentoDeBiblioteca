@@ -13,6 +13,10 @@ namespace SistemaGerenciamentoDeBiblioteca
 
 		public int Idade { get; set; }
 
+		public string Contato { get; set; }
+
+		public DateTime QuandoPegouLivroEmprestado { get; set; }
+
 		public bool PodePegarLivroEmprestado { get; set; }
 	}
 }
