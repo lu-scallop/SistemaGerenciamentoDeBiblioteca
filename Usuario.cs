@@ -18,5 +18,9 @@ namespace SistemaGerenciamentoDeBiblioteca
 		public DateTime QuandoPegouLivroEmprestado { get; set; }
 
 		public bool PodePegarLivroEmprestado { get; set; }
+
+		public Livro QualLivroPossui { get; set; }
+
+
 	}
 }
