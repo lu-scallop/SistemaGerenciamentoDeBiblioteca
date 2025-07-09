@@ -17,6 +17,13 @@
 			listaDeLivros.Add(new Livro("Ulisses", "James Joyce", "978-85-7164-672-8", 1922, false));
 			listaDeLivros.Add(new Livro("Moby Dick", "Herman Melville", "978-85-7971-032-7", 1851, true));
 			listaDeLivros.Add(new Livro("A Metamorfose", "Franz Kafka", "978-85-7232-601-1", 1915, true));
-		}
+
+            foreach (Livro livro in listaDeLivros)
+            {
+				Console.WriteLine(livro.ISBN);
+            }
+
+			Console.ReadLine();
+        }
 	}
 }

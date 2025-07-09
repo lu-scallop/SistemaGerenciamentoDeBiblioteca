@@ -8,18 +8,40 @@ namespace SistemaGerenciamentoDeBiblioteca
 {
 	public class Usuario
 	{
-		public string Id { get; set; }
-		public string Nome { get; set; }
+		public string Id { get; }
+		public int NivelDeAcesso { get; private set; }
+		public string Email { get; private set; }
+		public string Senha { get; private set; }
+		public string Nome { get; }
+		public int Idade { get; private set; }
+		public string Contato { get; private set; }
+		public DateTime QuandoPegouLivroEmprestado { get; private set; }
+		public bool PodePegarLivroEmprestado { get; private set; }
+		public Livro QualLivroPossui { get; private set; }
 
-		public int Idade { get; set; }
+		public void PegaLivroEmprestado(Livro livro)
+		{
+			if (livro.Disponivel == false && PodePegarLivroEmprestado == false) 
+			{
+				Console.WriteLine($"O livro não está disponível ou o usuário {Nome} " +
+					$"já pegou livro emprestado.");
+				return;
+			}
+			else
+			{
+				QualLivroPossui = livro;
+				Console.WriteLine($"O livro {livro.Titulo} foi emprestado a {Nome} com sucesso.");
+			}
 
-		public string Contato { get; set; }
+        }
 
-		public DateTime QuandoPegouLivroEmprestado { get; set; }
-
-		public bool PodePegarLivroEmprestado { get; set; }
-
-		public Livro QualLivroPossui { get; set; }
+		public void DevolveLivroEmprestado(Livro livro)
+		{
+            if (livro.Titulo == QualLivroPossui.Titulo)
+            {
+				QualLivroPossui = null;
+            }
+        }
 
 
 	}
