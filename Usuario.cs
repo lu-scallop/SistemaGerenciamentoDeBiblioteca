@@ -8,7 +8,7 @@ namespace SistemaGerenciamentoDeBiblioteca
 {
 	public class Usuario
 	{
-		public string Id { get; }
+		public int Id { get; }
 		public int NivelDeAcesso { get; private set; }
 		public string Email { get; private set; }
 		public string Senha { get; private set; }
@@ -19,6 +19,12 @@ namespace SistemaGerenciamentoDeBiblioteca
 		public bool PodePegarLivroEmprestado { get; private set; }
 		public Livro QualLivroPossui { get; private set; }
 
+		public Usuario(int id, int nivelDeAcesso, string email, string senha,
+			string nome, int idade, string contato, DateTime dateTime,
+			bool podePegarLivroEmprestado, Livro qualLivroPossui)
+		{
+
+		}
 		public void PegaLivroEmprestado(Livro livro)
 		{
 			if (livro.Disponivel == false && PodePegarLivroEmprestado == false) 

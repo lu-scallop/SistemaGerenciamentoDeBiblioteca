@@ -24,6 +24,8 @@
             }
 
 			Console.ReadLine();
+
+			Usuario usuario = new Usuario();
         }
 	}
 }
