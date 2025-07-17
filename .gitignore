@@ -1,0 +1,17 @@
+# Pastas do Visual Studio e de build
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.sdf
+*.opensdf
+*.docstates
+
+# Arquivos de pacote
+packages/
+node_modules/
+
+# Logs e outros
+*.log
