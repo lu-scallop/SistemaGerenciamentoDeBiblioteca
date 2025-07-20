@@ -8,5 +8,8 @@ namespace SistemaGerenciamentoDeBiblioteca
 {
     public class Membro
     {
+        public List<Livro> HistoricoDeEmprestimo { get; set; }
+        public bool DisponivelParaPegarEmprestado {  get; set; }
+
     }
 }

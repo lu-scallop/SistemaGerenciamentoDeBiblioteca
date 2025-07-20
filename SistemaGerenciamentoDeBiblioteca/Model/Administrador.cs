@@ -8,5 +8,6 @@ namespace SistemaGerenciamentoDeBiblioteca
 {
     class Administrador
     {
+        public bool PermitirEmprestimoParaMembro {  get; set; }
     }
 }
