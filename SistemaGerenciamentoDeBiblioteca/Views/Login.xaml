@@ -12,21 +12,63 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
         <Image 
-            Source="Assets/bookworm.png" 
-            Stretch="Fill"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top"
-            Width="250"
-            Height="129" Margin="16,24,0,0"/>
+            Grid.Row="0"
+            Source="/Assets/bookworm.png" 
+            Stretch="Uniform"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            MaxWidth="150"
+            MaxHeight="100" 
+            Margin="10"/>
 
-        <Label Content="Usuário" Grid.Row="1" Margin="100,10,100,157"/>
-        <Label Content="Senha" Grid.Row="1" Margin="100,81,100,86"/>
-        <TextBox Grid.Row="1" Width="100" Background="LightYellow" Margin="100,40,100,135"/>
-        <TextBox Grid.Row="1" Width="100" Background="LightYellow" Margin="100,111,100,64"/>
+        <StackPanel Grid.Row="1" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center"
+                    Width="200">
+            <Label Content="Usuário" 
+                   FontSize="14" 
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Left"/>
+
+            <TextBox Width="180" 
+                     Height="25"
+                     Background="LightYellow" 
+                     Margin="0,5,0,15"/>
+
+            <Label Content="Senha"  
+                   FontSize="14" 
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Left"/>
+            <PasswordBox Width="180" 
+                        Height="25"
+                        Background="LightYellow" 
+                        Margin="0,5,0,20"/>
+
+            <Button Content="Entrar" 
+                    Width="100" 
+                    Height="30"
+                    Background="#4CAF50"
+                    Foreground="White"
+                    FontWeight="SemiBold"
+                    Cursor="Hand" Click="Button_Click"/>
+            <Label 
+                FontSize="14"
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Foreground="Blue"
+                FontStyle="Italic"
+                Cursor="Hand" MouseLeftButtonDown="AdminLabel_Click"
+                >
+                <Label.Content>
+                    <TextBlock Text="ADMIN" TextDecorations="Underline"/>
+                </Label.Content>
+            </Label>
+        </StackPanel>
+        
 
 
 

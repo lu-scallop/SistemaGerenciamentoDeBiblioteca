@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SistemaGerenciamentoDeBiblioteca.Views;
 
 namespace SistemaGerenciamentoDeBiblioteca.Views
 {
@@ -19,9 +20,21 @@ namespace SistemaGerenciamentoDeBiblioteca.Views
 	/// </summary>
 	public partial class Login : Window
 	{
+		MainWindow main = new MainWindow();
 		public Login()
 		{
 			InitializeComponent();
 		}
-	}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			MessageBox.Show("Em desenvolvimento... Clique em Admin");
+        }
+
+		private void AdminLabel_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+			main.Show();
+		}
+    }
 }
