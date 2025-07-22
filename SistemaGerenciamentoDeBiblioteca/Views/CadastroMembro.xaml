@@ -31,7 +31,72 @@
                 BorderBrush="Black"
                 BorderThickness="1"
                 Margin="5">
-            <TextBlock Text="Informações pessoais" Margin="5"/>
+            <StackPanel>
+                <TextBlock Text="Informações pessoais" Margin="5"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                        Content="Nome completo:" 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        FontSize="10"/>
+                    <TextBox 
+                        Name="txtNome" 
+                        Width="120" 
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        HorizontalAlignment="Left"
+                        Margin="0,2,0,2"/>
+
+                    <Label Content="Data de nascimento:" 
+                           Grid.Row="0" Grid.Column="1" 
+                           HorizontalAlignment="Center" 
+                           FontSize="10"/>
+
+                    <DatePicker Name="txtDataNascimento" 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                Margin="261,2,10,2" />
+
+                    <Label Content="CPF:" 
+                           Grid.Row="2" 
+                           Grid.Column="0" 
+                           FontSize="10"
+                           HorizontalAlignment="Center"/>
+
+                    <TextBox Name="txtCPF" 
+                             Width="80"
+                             HorizontalAlignment="Left"
+                             Grid.Row="2" 
+                             Grid.Column="1" 
+                             Margin="0,2,0,2" />
+
+                    <Label Content="Endereço:" 
+                           Grid.Row="2" 
+                           Grid.Column="1" 
+                           FontSize="10"
+                           HorizontalAlignment="Center"/>
+
+                    <TextBox Name="txtEndereco"
+                             Grid.Row="2" 
+                             Grid.Column="1" 
+                             Margin="239,2,10,2" />
+
+                </Grid>
+
+
+            </StackPanel>
         </Border>
 
         <Border Grid.Row="2"

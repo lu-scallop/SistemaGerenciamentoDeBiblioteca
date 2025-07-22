@@ -13,6 +13,7 @@ namespace SistemaGerenciamentoDeBiblioteca
         public DateTime DataNascimento { get; set; }
         public string Genero { get; set; }
         public string Cpf { get; set; }
+        public bool UsuarioAtivo { get; set; }
 
     }
 }
