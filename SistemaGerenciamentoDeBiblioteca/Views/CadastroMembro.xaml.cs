@@ -22,6 +22,22 @@ namespace SistemaGerenciamentoDeBiblioteca.Views
 		public CadastroMembro()
 		{
 			InitializeComponent();
+			CarregarComboBox();
 		}
+
+		private void CarregarComboBox()
+		{
+			var unidadesFederativas = new List<string>
+			{
+				"SC",
+				"PA",
+				"MG"
+
+			};
+
+			cmbBoxUnidadesFedrativas.ItemsSource = unidadesFederativas;
+
+		}
+		
 	}
 }

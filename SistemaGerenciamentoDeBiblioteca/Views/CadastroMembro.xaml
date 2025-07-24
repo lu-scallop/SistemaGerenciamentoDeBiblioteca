@@ -26,16 +26,17 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0"
-                Grid.Column="0"
-                BorderBrush="Black"
-                BorderThickness="1"
-                Margin="5">
+        <GroupBox 
+                Grid.Row="0" Grid.Column="0"
+                Header="INFORMAÇÕES PESSOAIS"
+                BorderBrush="Gray"
+                Padding="2">
             <StackPanel>
-                <TextBlock Text="Informações pessoais" Margin="5"/>
 
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -57,7 +58,7 @@
                         Grid.Row="0" 
                         Grid.Column="1" 
                         HorizontalAlignment="Left"
-                        Margin="0,2,0,2"/>
+                        Margin="2"/>
 
                     <Label Content="Data de nascimento:" 
                            Grid.Row="0" Grid.Column="1" 
@@ -77,35 +78,92 @@
 
                     <TextBox Name="txtCPF" 
                              Width="80"
+                             ToolTip="000.000.000-00"
                              HorizontalAlignment="Left"
                              Grid.Row="2" 
                              Grid.Column="1" 
-                             Margin="0,2,0,2" />
+                             Margin="2" />
 
-                    <Label Content="Endereço:" 
+                    <Label Content="Celular:" 
                            Grid.Row="2" 
                            Grid.Column="1" 
                            FontSize="10"
                            HorizontalAlignment="Center"/>
 
-                    <TextBox Name="txtEndereco"
+                    <TextBox Name="txtContato"
+                             ToolTip="(00) 00000-0000"
                              Grid.Row="2" 
                              Grid.Column="1" 
                              Margin="239,2,10,2" />
+
+                    <Label Content="Email:" 
+                           Grid.Row="3" 
+                           Grid.Column="0" 
+                           FontSize="10"
+                           HorizontalAlignment="Center"/>
+
+                    <TextBox Name="txtEmail"
+                             ToolTip="exemplo@email.com"
+                             Width="80"
+                             Grid.Row="3" 
+                             Grid.Column="1" 
+                             HorizontalAlignment="Left"
+                             Margin="2"/>
+                    <Label Content="Endereço:"
+                           Grid.Row="4"
+                           Grid.Column="0"
+                           FontSize="10"
+                           HorizontalAlignment="Center"/>
+                    <TextBox Name="txtCep" 
+                             Grid.Column="1"
+                             Grid.Row="4"
+                             Text="CEP"
+                             Width="80"
+                             HorizontalAlignment="Left"
+                             Margin="2"
+                             FontSize="10"/>
+                    <TextBox Name="txtRua"
+                             Grid.Column="1"
+                             Grid.Row="4"
+                             Text="Rua"
+                             Width="80"
+                             HorizontalAlignment="Left"
+                             Margin="87,2,0,2"
+                             FontSize="10"
+                             />
+                    <TextBox Name="txtBairro"
+                             Grid.Column="1"
+                             Grid.Row="4"
+                             Text="Bairro"
+                             Width="80"
+                             HorizontalAlignment="Left"
+                             Margin="172,2,0,2"
+                             FontSize="10"
+                             />
+                    <TextBox Name="txtCidade"
+                             Grid.Column="1"
+                             Grid.Row="4"
+                             Text="Cidade"
+                             Width="80"
+                             HorizontalAlignment="Left"
+                             Margin="257,2,0,2"
+                             FontSize="10"
+                             />
+                    <ComboBox 
+                              x:Name="cmbBoxUnidadesFedrativas" 
+                              Grid.Column="1" Grid.Row="4"
+                              Margin="342,2,10,2"/>
 
                 </Grid>
 
 
             </StackPanel>
-        </Border>
+        </GroupBox>
 
-        <Border Grid.Row="2"
-                Grid.Column="0"
-                BorderBrush="Black"
-                BorderThickness="1"
-                Margin="5">
-            <TextBlock Text="Informações adicionais" Margin="5"/>
-        </Border>
+        <GroupBox Grid.Row="2" Grid.Column="0"
+                  Header="INFORMAÇÕES ADICIONAIS"
+                  Padding="2">
+        </GroupBox>
 
         <Border Grid.Row="0"
                 Grid.RowSpan="3"
