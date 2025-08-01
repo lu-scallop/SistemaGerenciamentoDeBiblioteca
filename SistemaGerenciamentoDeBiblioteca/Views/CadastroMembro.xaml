@@ -30,16 +30,17 @@
                 Grid.Row="0" Grid.Column="0"
                 Header="INFORMAÇÕES PESSOAIS"
                 BorderBrush="Gray"
-                Padding="2">
+                Padding="2"
+                Margin="2">
             <StackPanel>
 
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -162,8 +163,67 @@
 
         <GroupBox Grid.Row="2" Grid.Column="0"
                   Header="INFORMAÇÕES ADICIONAIS"
-                  Padding="2">
+                  BorderBrush="Gray"
+                  Padding="2"
+                  Margin="2">
+
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Tipo de membro:"
+                           Grid.Row="0"
+                           FontSize="10"/>
+                    <ComboBox Grid.Row="0"
+                              Grid.Column="1"
+                              Margin="2"/>
+                    
+                    <Label Content="Gênero:"
+                           Grid.Row="1"
+                           FontSize="10"/>
+                    <ComboBox Grid.Row="1"
+                              Grid.Column="1"
+                              Margin="2"/>
+                    <Label Content="Profissão:"
+                           Grid.Row="0"
+                           Grid.Column="2"
+                           FontSize="10"
+                           HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Row="0"
+                              Grid.Column="3"
+                              Margin="2"/>
+                </Grid>
+            </StackPanel>
+            
         </GroupBox>
+
+        <Button Content="Cadastrar"
+                Command="{Binding CadastrarCommand}"
+                Grid.Row="6"
+                Width="100"
+                HorizontalAlignment="Left"
+                Margin="2"/>
+        <Button Content="Atualizar"
+                Grid.Row="6"
+                Width="100"
+                HorizontalAlignment="Center"
+                Margin="2"/>
+        <Button Content="Visualizar perfil"
+                Grid.Row="6"
+                Width="100"
+                HorizontalAlignment="Right"
+                Margin="2"/>
 
         <Border Grid.Row="0"
                 Grid.RowSpan="3"
